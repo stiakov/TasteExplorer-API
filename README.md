@@ -2,9 +2,9 @@
 ![](https://img.shields.io/badge/Rails-6.0.2.1-red?style=flat-square)
 ![](https://img.shields.io/badge/DB-Postgresql-blue?style=flat-square)
 
-# Synapx Learning Network API
+# Taste Explorer Network API
 
-It's the backend side that will serve a set of JSON endpoints for an application intended to find, publish, discover and collect alternative educational projects in your city.
+It's the backend side that will serve a set of JSON endpoints for an application intended to find, publish, discover and collect beverage and food places in your city.
 
 ## Getting Started
 ### Prerequisites

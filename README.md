@@ -23,8 +23,18 @@ It's the backend side that will serve a set of JSON endpoints for an application
 
 ## Author
 
-**Santiago Torres G.**
+👤 **Santiago Torres G.**
 
-![Twitter Follow](https://img.shields.io/twitter/follow/st_iakov?label=Follow&style=social)
+* [GitHub](https://github.com/stiakov)
+* [LinkedIn](https://www.linkedin.com/in/stiakov/)
+* [Twitter](https://twitter.com/st_iakov)
 
-![GitHub followers](https://img.shields.io/github/followers/stiakov?label=Follow&style=social)
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!

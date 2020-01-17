@@ -28,10 +28,10 @@ group :development, :test do
 end
 
 group :test do
-  gem 'factory_bot', '~> 5.1', '>= 5.1.1'
-  gem 'shoulda-matchers', '~> 4.2'
-  gem 'faker', '~> 2.10', '>= 2.10.1'
   gem 'database_cleaner', '~> 1.7'
+  gem 'factory_bot', '~> 5.1', '>= 5.1.1'
+  gem 'faker', '~> 2.10', '>= 2.10.1'
+  gem 'shoulda-matchers', '~> 4.2'
 end
 
 group :development do

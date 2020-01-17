@@ -3,4 +3,4 @@ api_mime_types = %W(
   text/x-json,
   application/json
 )
-Mime::type.register 'application/vnd.api+json', :json, api_mime_types
+Mime::Type.register 'application/vnd.api+json', :json, api_mime_types

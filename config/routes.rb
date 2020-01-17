@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   namespace :v1 do
     get 'home/index'
     get 'home/private'

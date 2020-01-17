@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  namespace :v1 do
+    get 'home/index'
+    get 'home/private'
+  end
+  root to: "v1/home#index"
 end

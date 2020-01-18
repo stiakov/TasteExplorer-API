@@ -6,6 +6,7 @@ include Content
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 Sarah = User.create!(first_name: 'Sarah', last_name: 'Violet', mobile: '+576004559895', email: 'test@email.net', password: '123456x', password_confirmation: '123456x')
 
 get_countries.each do |country|
@@ -19,7 +20,7 @@ end
 country = Country.find_by(id: 42)
 type = CommerceType.all.sample
 
-Commerce.create!(
+establishment = Commerce.create!(
     user: Sarah,
     name: 'Bistro Pub',
     description: Faker::Company.bs,
@@ -33,5 +34,16 @@ Commerce.create!(
     website: Faker::Internet.domain_name,
     instagram: Faker::Internet.username,
     commerce_type: type
-
 )
+
+5.times do
+  Photo.create!(imageable: establishment, image_data: Faker::String.random(length: 12))
+end
+
+2.times do
+  Photo.create!(imageable: Sarah, image_data: Faker::String.random(length: 7))
+end
+
+Reservation.create!(user: Sarah, commerce: establishment, seat: 2, date_time: Time.now)
+
+Favorite.create(user: Sarah, commerce: establishment)

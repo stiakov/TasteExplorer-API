@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_17_212959) do
+ActiveRecord::Schema.define(version: 2020_01_17_235152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,35 @@ ActiveRecord::Schema.define(version: 2020_01_17_212959) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "commerce_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["commerce_id"], name: "index_favorites_on_commerce_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "imageable_type", null: false
+    t.bigint "imageable_id", null: false
+    t.string "image_data"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["imageable_type", "imageable_id"], name: "index_photos_on_imageable_type_and_imageable_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "commerce_id", null: false
+    t.integer "seat"
+    t.datetime "date_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["commerce_id"], name: "index_reservations_on_commerce_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -68,4 +97,8 @@ ActiveRecord::Schema.define(version: 2020_01_17_212959) do
   add_foreign_key "commerces", "commerce_types"
   add_foreign_key "commerces", "countries"
   add_foreign_key "commerces", "users"
+  add_foreign_key "favorites", "commerces"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "reservations", "commerces"
+  add_foreign_key "reservations", "users"
 end

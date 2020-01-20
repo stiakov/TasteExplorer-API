@@ -6,6 +6,6 @@ class V1::HomeController < ApplicationController
   end
 
   def private
-    render json: {current_user}
+    render json: current_user
   end
 end

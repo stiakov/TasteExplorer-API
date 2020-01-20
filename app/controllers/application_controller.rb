@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::API
   before_action :configure_permitted_parameters, if: :devise_controller?
+  include JsonapiErrorsHandler
+  rescue_from ::StandardError, with: lambda { |e| handle_error(e) }
 
   protected
 

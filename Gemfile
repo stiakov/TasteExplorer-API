@@ -16,6 +16,7 @@ ruby '2.7.0'
 gem 'active_model_serializers', '~> 0.10.10'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'jsonapi_errors_handler', '~> 0.1.9'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
@@ -35,6 +36,8 @@ group :test do
 end
 
 group :development do
+  gem 'better_errors', '~> 2.5', '>= 2.5.1'
+  gem 'binding_of_caller', '~> 0.8.0'
   gem 'hirb', '~> 0.7.3'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'

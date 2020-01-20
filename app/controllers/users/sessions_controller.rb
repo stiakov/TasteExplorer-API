@@ -10,11 +10,10 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    #super
     if user_signed_in?
-      puts 'OHH YES! :('
+      render json: current_user
     else
-      puts 'OHH NO! :('
+      raise JsonapiErrorsHandler::Errors::Unauthorized
     end
   end
 

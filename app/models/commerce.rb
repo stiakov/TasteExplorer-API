@@ -8,5 +8,6 @@ class Commerce < ApplicationRecord
   has_many :reservations
   has_many :favorites
 
-  validates_presence_of :name, :user, :commerce_type, :email, :country, :city, :state, :address
+  validates_presence_of :name, :user, :commerce_type, :email, :country, :city
+  validates :email, uniqueness: true
 end

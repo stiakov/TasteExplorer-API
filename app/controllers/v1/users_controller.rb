@@ -1,7 +1,6 @@
 class V1::UsersController < ApplicationController
   def show
     user = User.find_by(user_params)
-    byebug
     if user
       render json: user
     else

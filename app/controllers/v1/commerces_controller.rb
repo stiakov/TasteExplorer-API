@@ -5,22 +5,24 @@ class V1::CommercesController < ApplicationController
 
   def create
     commerce = Commerce.create(commerce_params)
-    commerce.save ? (render json: commerce) : (raise no_valid)
+    commerce.save ? (render json: commerce) : no_valid
   end
 
   def show
     commerce = Commerce.find_by(commerce_params)
-    commerce ? (render json: commerce) : (raise not_found)
+    commerce ? (render json: commerce) : not_found
   end
 
   def update
     commerce = Commerce.find_by_id(params[:id])
-    commerce.update(commerce_params) ? (render json: commerce) : (raise no_valid)
+    commerce&.update(commerce_params)
+    commerce ? (render json: commerce) : no_valid
   end
 
   def destroy
     commerce = Commerce.find_by_id(params[:id])
-    commerce.delete ? (render json: commerce) : (raise no_valid)
+    commerce&.destroy
+    commerce ? (render json: commerce) : no_valid
   end
 
   private

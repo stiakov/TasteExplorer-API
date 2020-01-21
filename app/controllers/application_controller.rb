@@ -4,23 +4,24 @@ class ApplicationController < ActionController::API
   rescue_from ::StandardError, with: lambda { |e| handle_error(e) }
 
   def unauthorized
-    JsonapiErrorsHandler::Errors::Unauthorized
+    raise JsonapiErrorsHandler::Errors::Unauthorized
   end
 
   def forbidden
-    JsonapiErrorsHandler::Errors::Forbidden
+    raise JsonapiErrorsHandler::Errors::Forbidden
   end
 
   def not_found
-    JsonapiErrorsHandler::Errors::NotFound
+    raise JsonapiErrorsHandler::Errors::NotFound
   end
 
   def no_valid
-    JsonapiErrorsHandler::Errors::Invalid
+    puts '----- NO VALID -----'
+    raise JsonapiErrorsHandler::Errors::Invalid
   end
 
   def standard_error
-    JsonapiErrorsHandler::Errors::StandardError
+    raise JsonapiErrorsHandler::Errors::StandardError
   end
 
 

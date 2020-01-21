@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sessions'}
+  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
 
-  root to: "v1/home#index"
+  root to: 'v1/home#index'
 
   namespace :v1 do
     get 'home/index'

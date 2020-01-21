@@ -28,7 +28,18 @@ class V1::CommercesController < ApplicationController
   private
 
   def commerce_params
-    params.permit(:id, :name, :country_id, :state, :city, :mobile, :landline, :email, :website, :instagram, :commerce_type_id, :user_id, :address)
+    params.permit(:id,
+                  :name,
+                  :country_id,
+                  :state,
+                  :city,
+                  :mobile,
+                  :landline,
+                  :email,
+                  :website,
+                  :instagram,
+                  :commerce_type_id,
+                  :user_id,
+                  :address)
   end
-
 end

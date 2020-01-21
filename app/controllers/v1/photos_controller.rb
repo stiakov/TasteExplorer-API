@@ -14,9 +14,7 @@ class V1::PhotosController < ApplicationController
 
   def show_commerce
     user = Commerce.find_by_id(params[:id])
-    byebug
     photos = user.photos.all if user
-    byebug
     photos ? (render json: photos) : not_found
   end
 

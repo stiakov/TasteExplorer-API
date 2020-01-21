@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
   before_action :configure_permitted_parameters, if: :devise_controller?
   include JsonapiErrorsHandler
-  rescue_from ::StandardError, with: lambda { |e| handle_error(e) }
+  rescue_from ::StandardError, with: ->(e) { handle_error(e) }
 
   def unauthorized
     raise JsonapiErrorsHandler::Errors::Unauthorized
@@ -16,14 +16,12 @@ class ApplicationController < ActionController::API
   end
 
   def no_valid
-    puts '----- NO VALID -----'
     raise JsonapiErrorsHandler::Errors::Invalid
   end
 
   def standard_error
     raise JsonapiErrorsHandler::Errors::StandardError
   end
-
 
   protected
 

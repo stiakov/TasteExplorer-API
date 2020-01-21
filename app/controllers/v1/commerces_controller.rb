@@ -5,38 +5,22 @@ class V1::CommercesController < ApplicationController
 
   def create
     commerce = Commerce.create(commerce_params)
-    if commerce.save
-      render json: commerce
-    else
-      JsonapiErrorsHandler::Errors::Invalid
-    end
+    commerce.save ? (render json: commerce) : (raise no_valid)
   end
 
   def show
     commerce = Commerce.find_by(commerce_params)
-    if commerce
-      render json: commerce
-    else
-      raise JsonapiErrorsHandler::Errors::NotFound
-    end
+    commerce ? (render json: commerce) : (raise not_found)
   end
 
   def update
     commerce = Commerce.find_by_id(params[:id])
-    if commerce.update(commerce_params)
-      render json: commerce
-    else
-      raise JsonapiErrorsHandler::Errors::Invalid
-    end
+    commerce.update(commerce_params) ? (render json: commerce) : (raise no_valid)
   end
 
   def destroy
     commerce = Commerce.find_by_id(params[:id])
-    if commerce.delete
-      render json: commerce
-    else
-      raise JsonapiErrorsHandler::Errors::Invalid
-    end
+    commerce.delete ? (render json: commerce) : (raise no_valid)
   end
 
   private

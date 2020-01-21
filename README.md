@@ -4,30 +4,38 @@
 
 # Taste Explorer Network API
 
-It's the backend side that will serve a set of JSON endpoints for an application intended to find, publish, discover and collect beverage and food places in your city.
+It's the backend side that will serve a set of JSON endpoints for an application
+intended to find, publish, discover and collect beverage and food places in your
+city.
 
 ## Getting Started
+
 ### Prerequisites
-* Ruby 2.7
-* Rails 6.0
+
+- Ruby 2.7
+- Rails 6.0
 
 ### Setup Dependencies
-* Run `bundle install` on the project's root directory.
+
+- Run `bundle install` on the project's root directory.
+
 ### Setup Database
-* Generate the database: `rails db:create`
-* Run the migrations: `rails db:migrate`
-* Populate db with seeds: `rails db:seed`
+
+- Generate the database: `rails db:create`
+- Run the migrations: `rails db:migrate`
+- Populate db with seeds: `rails db:seed`
 
 ### Run the server
-* Run this command: `rails server`
+
+- Run this command: `rails server`
 
 ## Author
 
 👤 **Santiago Torres G.**
 
-* [GitHub](https://github.com/stiakov)
-* [LinkedIn](https://www.linkedin.com/in/stiakov/)
-* [Twitter](https://twitter.com/st_iakov)
+- [GitHub](https://github.com/stiakov)
+- [LinkedIn](https://www.linkedin.com/in/stiakov/)
+- [Twitter](https://twitter.com/st_iakov)
 
 ## 🤝 Contributing
 

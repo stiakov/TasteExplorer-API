@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :v1 do
+    get 'favorites/index'
+    get 'favorites/show'
+    get 'favorites/create'
+    get 'favorites/update'
+    get 'favorites/destroy'
+  end
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
   namespace :v1 do
     get 'home/index'

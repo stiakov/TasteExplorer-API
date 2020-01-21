@@ -5,7 +5,7 @@ class V1::CommercesController < ApplicationController
 
   def create
     commerce = Commerce.create(commerce_params)
-    commerce.save ? (render json: commerce) : no_valid
+    commerce.valid? ? (render json: commerce) : no_valid
   end
 
   def show

@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_01_17_235152) do
     t.bigint "user_id", null: false
     t.bigint "commerce_id", null: false
     t.integer "seat"
-    t.datetime "date_time"
+    t.integer "date_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["commerce_id"], name: "index_reservations_on_commerce_id"
@@ -87,7 +87,6 @@ ActiveRecord::Schema.define(version: 2020_01_17_235152) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "photo_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

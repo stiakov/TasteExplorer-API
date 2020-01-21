@@ -15,7 +15,7 @@ class ApplicationController < ActionController::API
     JsonapiErrorsHandler::Errors::NotFound
   end
 
-  def invalid
+  def no_valid
     JsonapiErrorsHandler::Errors::Invalid
   end
 

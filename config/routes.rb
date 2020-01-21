@@ -44,6 +44,6 @@ Rails.application.routes.draw do
     post 'photos/create'
     get 'photos/show/user/:id', to: 'photos#show_user'
     get 'photos/show/commerce/:id', to: 'photos#show_commerce'
-    delete 'photos/destroy'
+    delete 'photos/:id/delete', to: 'photos#destroy'
   end
 end

@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   end
 
   namespace :v1 do
+    get 'commerces/index'
     post 'commerces/create'
+    get 'commerces/show/:id', to: 'commerces#show'
+    put 'commerces/:id/edit', to: 'commerces#update'
     get 'commerces/show'
     delete 'commerces/:id/delete', to: 'commerces#destroy'
   end

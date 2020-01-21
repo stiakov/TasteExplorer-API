@@ -11,12 +11,19 @@ Rails.application.routes.draw do
     get 'home/index'
     get 'home/private'
     get 'countries/index'
+
     get 'commerces/index'
     post 'commerces/create'
     get 'commerces/show/:id', to: 'commerces#show'
     get 'commerces/:id/edit', to: 'commerces#update'
     put 'commerces/:id/edit', to: 'commerces#update'
     delete 'commerces/:id/delete', to: 'commerces#destroy'
+
+    get 'favorites/index'
+    post 'favorites/create'
+    get 'favorites/show/:id', to: 'favorites#show'
+    delete 'favorites/:id/delete', to: 'favorites#destroy'
+
     get 'users/index'
     get 'users/show/:id', to: 'users#show'
   end

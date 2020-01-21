@@ -38,3 +38,7 @@ Feel free to check the [issues page](issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+---
+
+[![](https://codescene.io/projects/6628/status.svg) Get more details at **codescene.io**.](https://codescene.io/projects/6628/jobs/latest-successful/results)

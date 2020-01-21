@@ -9,6 +9,10 @@ include Content
 
 Sarah = User.create!(first_name: 'Sarah', last_name: 'Violet', mobile: '+576004559895', email: 'test@email.net', password: '123456x', password_confirmation: '123456x')
 
+2.times do
+  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, mobile: Faker::PhoneNumber.phone_number, email: Faker::Internet.email, password: '123456', password_confirmation: '123456')
+end
+
 get_countries.each do |country|
   Country.create!(name: country[:name], region: country[:region])
 end
@@ -44,6 +48,6 @@ end
   Photo.create!(imageable: Sarah, image_data: Faker::String.random(length: 7))
 end
 
-Reservation.create!(user: Sarah, commerce: establishment, seat: 2, date_time: Time.now)
+Reservation.create!(user: Sarah, commerce: establishment, seat: 2, date_time: Time.now.to_i)
 
 Favorite.create(user: Sarah, commerce: establishment)

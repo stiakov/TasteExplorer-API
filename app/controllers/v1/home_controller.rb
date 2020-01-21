@@ -1,9 +1,11 @@
 class V1::HomeController < ApplicationController
+  before_action :authenticate_user!, only: [:private]
+
   def index
-    render json: 'home'
+    render json: 'testing home'
   end
 
   def private
-    render json: 'this is my private room'
+    render json: current_user
   end
 end

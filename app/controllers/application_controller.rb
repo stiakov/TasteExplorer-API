@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::API
   before_action :configure_permitted_parameters, if: :devise_controller?
   include JsonapiErrorsHandler
+  include ActionController::MimeResponds
   rescue_from ::StandardError, with: ->(e) { handle_error(e) }
+  respond_to :json
 
   def unauthorized
     raise JsonapiErrorsHandler::Errors::Unauthorized

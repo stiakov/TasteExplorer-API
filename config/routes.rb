@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sessions'}
+  devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sessions'}, defaults: { format: :json }
 
   root to: "v1/home#index"
 
